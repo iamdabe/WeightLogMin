@@ -1,0 +1,14 @@
+﻿using System.Collections.Generic;
+
+namespace LiteDB
+{
+    public interface ILiteDbWeightLog
+    {
+        int Delete(int id);
+        IEnumerable<WeightLog> FindAll();
+        WeightLog FindOne(int id);
+        int Add(WeightLog weightLog);
+        bool Update(WeightLog weightLog);
+    }
+}
+

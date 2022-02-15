@@ -1,0 +1,9 @@
+SELECT $
+  INTO weightLog:INT
+  FROM $file('C:/Users/iam/OneDrive/source/WeightLogMin/WeightLogMin/data/weightLog.json');
+
+SELECT $ 
+  FROM weightLog;
+
+DROP COLLECTION weightLog;
+

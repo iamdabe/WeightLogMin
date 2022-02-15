@@ -1,0 +1,52 @@
+﻿using LiteDB;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace LiteDB
+{
+    public class LiteDbWeightLog
+    {
+
+        private LiteDatabase _liteDb;
+
+        public LiteDbWeightLog(LiteDbContext liteDbContext)
+        {
+            _liteDb = liteDbContext.Context;
+        }
+
+        public IEnumerable<WeightLog> FindAll()
+        {
+            var result = _liteDb.GetCollection<WeightLog>("WeightLog")
+                .FindAll();
+            return result;
+        }
+
+        public WeightLog FindOne(int id)
+        {
+            return _liteDb.GetCollection<WeightLog>("WeightLog")
+                .FindById(id);
+        }
+
+        public int Add(WeightLog weightLog)
+        {
+            return _liteDb.GetCollection<WeightLog>("WeightLog")
+                .Insert(weightLog);
+        }
+
+        public bool Update(WeightLog weightLog)
+        {
+            return _liteDb.GetCollection<WeightLog>("WeightLog")
+                .Update(weightLog);
+        }
+
+        public int Delete(int id)
+        {
+            return _liteDb.GetCollection<WeightLog>("WeightLog")
+                .DeleteMany(x => x.Id == id);
+
+        }
+    }
+
+}
