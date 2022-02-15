@@ -1,18 +1,15 @@
-﻿
-
 # WeightLogMin
+This is an ASP.NET Core 6.0 minimal api web application implementing MapGet and MapPost & LiteDB via service extensions.
 
-This is an ASP.NET Core 6.0 minimal api implementation using MapGet and MapPost. LiteDB and service extensions.
-
-The app flow is something like this:
- - Web application receives http calls from an ifttt applet which is triggered from a Withings scale.
- - App stores data in a LiteDB document database. 
- - Garmin app calls endpoint which has been formatted for use on low memory devices
-
-This app is in no way endoresed by Garmin nor Withings.
+This app is in no way endoresed by Garmin or Withings.
 
 ## Features 
-TBC.
+The app flow is something like this:
+ - Stand on withings smart scale
+ - App receives http call from an ifttt applet which is triggered from Withings
+ - App stores data in a LiteDB document database
+ - Garmin app calls endpoint which has been formatted for use on low memory devices
+ - Profit.
 
 ## System Requirements
 - Withings scale setup with HealthMate
